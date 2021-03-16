@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -15,6 +15,16 @@ function App() {
       reminder: true
     }
   ])
+
+  useEffect(() => {
+    const dataFromStore = localStorage.getItem("tasks");
+    if (dataFromStore) {
+      setTasks(JSON.parse(dataFromStore))
+    }
+  }, [])
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  });
 
   const [showInputs, setShowInputs] = useState(false);
 

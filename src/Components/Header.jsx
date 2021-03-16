@@ -8,7 +8,7 @@ const Header = ({ title, buttonTogle, showInputs }) => {
         <div>
             <header className='header'>
                 <h1>{title}</h1>
-                <Button color={showInputs ? 'green' : 'red'} text={showInputs ? 'Add' : 'Close'} onClick={buttonTogle}></Button>
+                <Button color={showInputs ? 'red' : 'green'} text={showInputs ? 'Close' : 'Add'} onClick={buttonTogle}></Button>
             </header>
         </div>
     )
